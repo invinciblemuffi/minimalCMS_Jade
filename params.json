@@ -1,0 +1,6 @@
+{
+  "name": "Minimalistic site generator using json and jade ",
+  "tagline": "A minimal CMS style solution for generating static HTML pages from JSON data using Jade and Harp",
+  "body": "# Minimalistic site generator using json data\r\nA CMS style solution for generating static HTML pages from JSON data using Jade as a templating engine and Harp server for jade compilation and site generation.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
