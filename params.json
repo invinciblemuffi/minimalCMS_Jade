@@ -1,6 +1,6 @@
 {
-  "name": "Minimalistic site generator using json and jade ",
-  "tagline": "A minimal CMS style solution for generating static HTML pages from JSON data using Jade and Harp",
-  "body": "# Minimalistic site generator using json data\r\nA CMS style solution for generating static HTML pages from JSON data using Jade as a templating engine and Harp server for jade compilation and site generation.\r\n",
+  "name": "Minimalistic static responsive site generator using json and jade",
+  "tagline": "A minimal CMS style solution for generating static responsive HTML pages from JSON data using Jade and Harp",
+  "body": "# Minimalistic static responsive site generator using json and jade\r\n- A CMS style solution for generating static responsive HTML pages from JSON data using Jade as a templating engine and HarpJS Web Server for preprocessing, compilation and generation of output folder(defaults to `www` folder as per HarpJs documentation).\r\n- This project consists of a single php file used only for mail functionality which is used in home page contact form.\r\n\r\n## Technologies (Frameworks, Libraries, Webserver, Pre-processor, Templating Engine, Data Representation) are listed below:\r\n- Jade Templating Engine\r\n- Harp Web Server\r\n- JSON\r\n- slickJS\r\n- jQuery\r\n- jQuery-UI\r\n- perfect-scrollbar\r\n- Foundation CSS\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
