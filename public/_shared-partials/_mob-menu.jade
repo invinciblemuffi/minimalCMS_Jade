@@ -1,0 +1,21 @@
+- var x=0
+- var links = public._data.links
+ul#mob-menu
+  each value, key in links
+    if (key == "index")
+      - var link_url= value[x].url
+      - var linkTitle= value[x].title
+        li: a(href="#{link_url}") #{linkTitle}
+    else if(key == "About-Us")
+      - var link_url= value[x].url
+      - var linkTitle= value[x].title
+        li: a(href="#{link_url}") #{linkTitle}
+    else
+      - var mainCatName= key.replace(/-/g, " ")
+      - var totSubCat = value.length
+        li #{mainCatName}
+          ul
+            - for(i=0; i<totSubCat;i++)
+              - var subCatName= value[i].subCatName
+              - var subCatLink= value[i].url
+                li: a(href="#{subCatLink}") #{subCatName}

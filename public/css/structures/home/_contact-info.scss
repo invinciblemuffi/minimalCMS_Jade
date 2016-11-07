@@ -1,0 +1,22 @@
+.contact-info {
+  padding-left: ($b-space / 2);
+  padding-right: ($b-space / 2);
+  margin-bottom: $b-space;
+  p:first-child {
+    @include font-style($family: avenirHv, $color: $white);
+    text-transform: uppercase;
+    background: $c-abt-cnt-header;
+    line-height: 2.5rem;
+    margin-bottom: ($b-space / 2);
+  }
+  .successmsg {
+    @include font-style($size: $b-fs-14, $color: $white);
+    background: $successGreen;
+    text-align: center;
+    padding: ($b-space / 2);
+    opacity: 0.85;
+    margin: ($b-space / 4) auto 0;
+    border-bottom-left-radius: ($b-space / 4);
+    border-bottom-right-radius: ($b-space / 4);
+  }
+}

@@ -1,0 +1,6 @@
+.abt-cnt-container {
+  margin-bottom: $b-space;
+  @import 'comp-info';
+  @import 'contact-info';
+  @import 'address';
+}

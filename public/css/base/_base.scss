@@ -1,0 +1,24 @@
+body {
+  background:url(../img/noisy.png) repeat;
+}
+
+ul {
+  margin: 0;
+  li {
+  list-style-type: none;
+  a {text-decoration: none;}
+  }
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  border-color: #555;
+  margin: 0;
+}
+
+.err {
+  box-shadow: 0 0 3px $errorRed !important;
+}

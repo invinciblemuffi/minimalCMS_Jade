@@ -1,0 +1,72 @@
+// *************************************
+//
+//   Font Setup, Application-wide Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+@include font-face(avenirBk, "Avenir-Book.ttf");
+@include font-face(avenirMd, "Avenir-Medium.ttf");
+@include font-face(avenirLt, "Avenir-Light.ttf");
+@include font-face(avenirHv, "Avenir-Heavy.ttf");
+
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Palette ----- //
+
+// Default Colors
+$darkBlue: rgba(0,65,107,1); /*Footer colors remains fixed*/
+$strongCyan: rgba(237,24,74,1); /*Footer colors remains fixed*/
+$lightGray: #ccc; /*Form input box color remains fixed*/
+$white: white; /*Universal color - can be used on any element or even entire body*/
+$black: black; /*black pri-col*/
+$successGreen: green; /*Used for success Messages*/
+$errorRed: red; /*Used for error messages and borders*/
+
+// Project Specific Colors
+$darkslategray: darkslategray; /*accrd-header-col*/
+$deepblue: rgba(43,120,180,1); /*prod-header-col*/
+$darkred: rgba(102,0,0,1); /*comp-det-col*/
+$brown: brown; /*slick navigation color*/
+
+// ----- Base ----- //
+
+$c-background: $white;
+$c-text: $black;
+
+// ----- Components ----- //
+
+$c-comp-det: $darkred;
+$c-form-input: $lightGray;
+$c-form-submit: $deepblue;
+$c-foot--p1: $darkBlue;
+$c-foot--p2: $strongCyan;
+
+// ----- Structures ----- //
+
+$c-accrd-header: rgba($darkslategray, 0.85);
+$c-prod-header: $deepblue;
+$c-abt-cnt-header: $c-prod-header;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// ----- Sizing ----- //
+
+$b-space: 1rem;
+
+// ----- Typography ----- //
+
+$b-fs: 1rem;
+$b-fs-18: 1.125rem; /*18px*/
+$b-fs-15: 0.9375rem; /*15px*/
+$b-fs-14: 0.875rem; /*14px*/
+$b-fs-12: 0.75rem; /*12px*/
+$b-fs-11: 0.6875rem; /*11px*/

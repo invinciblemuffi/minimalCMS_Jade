@@ -1,0 +1,23 @@
+.header-container {
+  background: $c-background;
+}
+.header {
+  line-height: 25px;
+  .timings, .contact {
+    p {
+      @include font-style($size: $b-fs-11);
+      line-height: inherit;
+      }
+    }
+  .contact {
+    p {
+      display: inline-block;
+      margin-left: $b-space;
+      &:first-child {margin-left: 0;}
+      }
+    p > span {
+      @include font-style($family: avenirMd, $size: $b-fs-11);
+      text-decoration: underline;
+      }
+    }
+  }

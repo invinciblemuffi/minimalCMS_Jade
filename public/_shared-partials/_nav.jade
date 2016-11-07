@@ -1,0 +1,32 @@
+div.row.nav-prod-container
+  div.medium-12.columns
+    div.medium-3.columns.main-nav.psz
+      p.text-center.hide Product Categories
+      div.medium-12.columns.accordion-container.psz
+        - var links = public._data.links
+          each value, key in links
+            - var totSubCat = value.length
+            - for(i=0; i<totSubCat;i++)
+              if(value[i].showHomePage == "true")
+                - var link_url= value[i].url
+                - var link_title= value[i].title
+                  h5.home-link.mns: a(href="#{link_url}") #{link_title}
+    div.medium-9.columns.carousel
+      div.medium-12.columns.psz.carousel-images
+        div: img(src="img/prod-collage.jpg")
+        div: img(src="img/prod-collage1.jpg")
+        div: img(src="img/prod-collage2.jpg")
+        div: img(src="img/prod-collage3.jpg")
+        div: img(src="img/prod-collage4.jpg")
+        div: img(src="img/prod-collage5.jpg")
+        div: img(src="img/prod-collage6.jpg")
+        script.
+          $('.carousel-images').slick({
+            autoplay: true,
+            autoplaySpeed: 1000,
+            dots: true,
+            speed: 4000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+          });

@@ -1,0 +1,17 @@
+- var links= public._data.links
+- var x=0
+div.medium-3.columns.accordion-container
+  each value, key in links
+    if (key == "index")
+      h5.home-link: a(href="index.html") Home
+    else if(key == "About-Us")
+      h5.home-link: a(href="About-Us.html") About Us
+    else
+      - var mainCatName= key.replace(/-/g, " ")
+      h3.home-link #{mainCatName}
+      - var totSubCat = value.length
+        div: ul
+          - for(i=0; i<totSubCat;i++)
+            - var subCatName= value[i].subCatName
+            - var subCatLink= value[i].url
+              li: a(href="#{subCatLink}") #{subCatName}

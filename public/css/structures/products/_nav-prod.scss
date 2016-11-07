@@ -1,0 +1,123 @@
+.accordion-container {
+  padding-right: 0;
+  .home-link a,
+  h5,
+  h3 {
+    @include font-style(avenirMd, $b-fs-14, $white);
+    letter-spacing: 0.6px;
+  }
+
+  .home-link a:hover {
+    @include link-hover-transition($white, black, 85%, color, 0.35s, linear);
+  }
+
+  h5,
+  h3 {
+    @include accordion-container--mainCat;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    outline: none;
+    border-bottom: 1px solid $lightGray;
+    &:hover {
+      cursor: pointer;
+    }
+    & + div {
+      margin-bottom: 0;
+    }
+  }
+  //mns= main-nav styles
+  h5 {
+    margin-top: 0;
+    border-bottom: 1px solid $lightGray;
+    &:last-child {border-bottom: none;}
+    &.mns {
+      margin-bottom: ($b-space * 0.85);
+      border-bottom: none;
+    }
+  }
+
+  h5:last-child,
+  h3 + div:last-of-type {
+    margin-bottom: 0;
+  }
+
+  ul {
+    background: $white;
+    li {
+      padding: 0.25rem 0.5rem;
+      border-bottom: 1px solid $lightGray;
+      &:last-child {border-bottom: none;}
+      a {
+        @include font-style();
+        letter-spacing: 0.25px;
+        &:hover {
+          @include link-hover-transition($c-text, white, 70%, color, 0.35s, linear);
+        }
+      }
+    }
+  }
+
+}
+
+// .accordion-container {
+//   padding-right: $b-space;
+//   padding-left: 0;
+//   .home-link a,
+//   h5,
+//   h3 {
+//     @include font-style(avenirMd, $b-fs-14, $white);
+//     letter-spacing: 0.6px;
+//   }
+//
+//   .home-link a:hover {
+//     @include link-hover-transition($white, black, 85%, color, 0.35s, linear);
+//   }
+//
+//   h5,
+//   h3 {
+//     @include accordion-container--mainCat;
+//   }
+//
+//   h3 {
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     & + div {
+//       margin-bottom: 0;
+//     }
+//   }
+//   //mns= main-nav styles
+//   h5 {
+//     margin-top: 0;
+//     border-bottom: 1px solid $lightGray;
+//     &:last-child {border-bottom: none;}
+//     &.mns {
+//       margin-bottom: ($b-space * 0.85);
+//       border-bottom: none;
+//     }
+//   }
+//
+//   h5:last-child,
+//   h3 + div:last-of-type {
+//     margin-bottom: 0;
+//   }
+//
+//   ul {
+//     background: $white;
+//     li {
+//       padding: 0.25rem 0.5rem;
+//       border-bottom: 1px solid $lightGray;
+//       &:last-child {border-bottom: none;}
+//       a {
+//         @include font-style();
+//         letter-spacing: 0.25px;
+//         &:hover {
+//           @include link-hover-transition($c-text, white, 70%, color, 0.35s, linear);
+//         }
+//       }
+//     }
+//   }
+//
+// }

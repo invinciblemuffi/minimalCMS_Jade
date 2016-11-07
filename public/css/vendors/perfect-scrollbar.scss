@@ -1,0 +1,96 @@
+.ps-container {
+  overflow: hidden !important;
+  &.ps-active-x > .ps-scrollbar-x-rail,
+  &.ps-active-y > .ps-scrollbar-y-rail {
+    display: block;
+  }
+  &.ps-in-scrolling {
+    pointer-events: none;
+    &.ps-x > .ps-scrollbar-x-rail {
+      background-color: #eee;
+      opacity: 0.9;
+      & > .ps-scrollbar-x {
+        background-color: #999;
+      }
+    }
+    &.ps-y > .ps-scrollbar-y-rail {
+      background-color: #eee;
+      opacity: 0.9;
+      & > .ps-scrollbar-y {
+        background-color: #999;
+      }
+    }
+  }
+  & > .ps-scrollbar-x-rail {
+    display: none;
+    position: absolute; /* Don't change the 'position' */
+    border-radius: 4px;
+    opacity: 0;
+    transition: background-color .2s linear, opacity .2s linear;
+    bottom: 3px; /* there must be 'bottom' for ps-scrollbar-x-rail */
+    height: 8px;
+    & > .ps-scrollbar-x {
+      position: absolute; /* Don't change the 'position' */
+      background-color: #aaa;
+      border-radius: 4px;
+      transition: background-color .2s linear;
+      bottom: 0; /* there must be 'bottom' for ps-scrollbar-x */
+      height: 8px;
+    }
+  }
+  & > .ps-scrollbar-y-rail {
+    height: 300px; /*I added height so that scrollbar can appear if content exceeds height*/
+    display: none;
+    position: absolute; /* Don't change the 'position' */
+    border-radius: 4px;
+    opacity: 0.4;
+    transition: background-color .2s linear, opacity .2s linear;
+    right: 0; /* there must be 'right' for ps-scrollbar-y-rail */
+    width: 8px;
+    &  > .ps-scrollbar-y {
+      position: absolute; /* Don't change the 'position' */
+      background-color: #121212;
+      border-radius: 4px;
+      transition: background-color .2s linear;
+      right: 0; /* there must be 'right' for ps-scrollbar-y */
+      width: 8px;
+    }
+  }
+  &:hover.ps-in-scrolling {
+    pointer-events: none;
+    &.ps-x > .ps-scrollbar-x-rail {
+      background-color: #eee;
+      opacity: 0.9;
+      & > .ps-scrollbar-x {
+        background-color: #999;
+      }
+    }
+    &.ps-y > .ps-scrollbar-y-rail {
+      background-color: #eee;
+      opacity: 0.9;
+      &  > .ps-scrollbar-y {
+        background-color: #999;
+      }
+    }
+  }
+  &:hover > .ps-scrollbar-x-rail{
+    opacity: 0.6;
+    &:hover {
+      background-color: #eee;
+      opacity: 0.9;
+      & > .ps-scrollbar-x {
+        background-color: #999;
+      }
+    }
+  }
+  &:hover > .ps-scrollbar-y-rail{
+    opacity: 0.6;
+    &:hover {
+      background-color: #eee;
+      opacity: 0.9;
+      & > .ps-scrollbar-y {
+        background-color: #999;
+      }
+    }
+  }
+}

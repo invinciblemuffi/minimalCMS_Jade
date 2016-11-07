@@ -1,0 +1,119 @@
+doctype
+html
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{comp_title}
+    link(rel="stylesheet" href="css/vendors/foundation-icons/foundation-icons.css")
+    link(rel="stylesheet" href="css/slicknav.css")
+    link(rel="stylesheet" href="css/vendors/perfect-scrollbar.css")
+    link(rel="stylesheet" href="css/vendors/foundation.css")
+    link(rel="stylesheet" href="slick/slick.css")
+    link(rel="stylesheet" href="css/style.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="js/jquery.slicknav.min.js")
+    script(src="slick/slick.min.js")
+    script(src="js/jquery-ui.min.js")
+    script(src="js/perfect-scrollbar.jquery.min.js")
+  body
+    != partial("_shared-partials/_header-contact")
+    != partial("_shared-partials/_header-comp")
+    if(current.path[0] == "index")
+      != partial("_shared-partials/_nav")
+      != yield
+    else
+      != partial("_shared-partials/_inside-banner")
+      div.row.prods-container
+        != partial("_shared-partials/_nav-inside")
+        script.
+          $(function() {
+            $( ".accordion-container" ).accordion({
+              header: "h3",
+              heightStyle: "content"
+            });
+          });
+        != yield
+    != partial("_shared-partials/_footer")
+    script.
+      $(function() {
+        $('#mob-menu').slicknav({
+          duplicate: false,
+          prependTo: '.timings',
+          closeOnClick: true,
+          closedSymbol: '&#43',
+          openedSymbol: '&#8722',
+        });
+        $('#mob-menu').perfectScrollbar({
+          suppressScrollX: true,
+        }); 
+      });
+    if(current.path[0] == "index")  
+      script.
+        function isNumeric(n) {
+          return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+        function validatePhone(ph) {
+          var filter = /^\d{10}/;
+          if (filter.test(ph)) {return true;}
+          else {return false;}
+        }
+        function isValidEmail(email) {
+          var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+            return pattern.test(email);
+        }
+        function reset() {
+          $("#name").val("");
+          $("#company").val("");
+          $("#ph").val("");
+          $("#email").val("");
+        }
+        $(".successmsg").hide();
+        var validName = false,
+            validCompany = false,
+            validPh = false,
+            validEmail = false,
+            validForm = false;
+        $("input[type=text]").on("blur", function() {
+          $(this).removeClass("err");
+          if(!$.trim($(this).val())) {
+            $(this).focus().val("").attr("placeholder", "Please fill out this field").addClass("err");
+          } else {
+            if($(this).attr('id') == "name") {
+               if(isNumeric($(this).val())) {
+               $("#name").focus().val("").attr("placeholder", "Invalid Name").addClass("err");
+               } else {validName = true;}
+            } else if($(this).attr('id') == "company") {
+               if(isNumeric($(this).val())) {
+               $("#company").focus().val("").attr("placeholder", "Invalid Company Name").addClass("err");
+               } else {validCompany = true;}
+            } else if($(this).attr('id') == "ph") {
+               if(!validatePhone($(this).val())) {
+               $("#ph").focus().val("").attr("placeholder", "Invalid Phone Number").addClass("err");
+               } else {validPh = true;}
+            } else if($(this).attr('id') == "email") {
+               if(!isValidEmail($(this).val())) {
+               $("#email").focus().val("").attr("placeholder", "Invalid Email Address").addClass("err");
+               } else {validEmail = true;}
+            }
+          }
+        });
+        
+        $("form").on("submit", function(e) {
+          e.preventDefault();
+          if(!$.trim($("#name").val())) {$("#name").focus();}
+          else if(!$.trim($("#company").val())) {$("#company").focus();}
+          else if(!$.trim($("#ph").val())) {$("#ph").focus();}
+          else if(!$.trim($("#email").val())) {$("#email").focus();}
+          
+          if(validName == true && validCompany == true && validPh == true && validEmail == true) {
+            $this = $(this);
+            $.ajax({
+              type: "POST",
+              url: $this.attr('action'),
+              data: $this.serialize(),
+              success : function(){
+                $(".successmsg").fadeIn("fast").fadeOut(8000);
+              }
+            });
+            setTimeout(reset, 3000);
+          }
+        });  

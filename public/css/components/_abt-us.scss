@@ -1,0 +1,18 @@
+.abt-us-pg {
+  h4 {
+    @include font-style(avenirHv, $b-fs-14, $white);
+    background: $c-prod-header;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+  p {
+    @include font-style($size: $b-fs-14);
+    background: $c-background;
+    margin-bottom: ($b-space * 1.5);
+    line-height: 1.5rem;
+  }
+  h4,
+  p {
+    padding: ($b-space * 0.75);
+  }
+}

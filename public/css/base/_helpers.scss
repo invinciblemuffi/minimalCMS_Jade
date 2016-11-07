@@ -1,0 +1,55 @@
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+//---------   General   ---------//
+
+@mixin font-face($fontName, $fileName) {
+  $filepath: "../fonts/" + $fileName;
+  @font-face {
+    font-family: $fontName;
+    src: url($filepath);
+  }
+}
+
+//---------   Pages   ---------//
+
+@mixin font-style ($family: avenirBk, $size: 0.75rem, $color: $c-text) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+  }
+
+@mixin link-hover-transition($color1, $color2, $mixPercent, $propName, $duration, $timeFn) {
+  color: mix($color1, $color2, $mixPercent) !important;
+  transition: $propName $duration $timeFn;
+}
+
+@mixin pd-space--tb($p-top: null, $p-bot: null) {
+  padding-top: $p-top;
+  padding-bottom: $p-bot;
+}
+
+//---------   Structures - Products   ---------//
+
+@mixin accordion-container--mainCat {
+  background: $c-accrd-header;
+  padding: ($b-space / 2);
+  margin-bottom: 0;
+}
+
+@mixin prods-display($bg, $ln-ht, $mb: null) {
+  background: $bg;
+  line-height: $ln-ht;
+  margin-bottom: $mb;
+}
+
+//---------   Extras   ---------//
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

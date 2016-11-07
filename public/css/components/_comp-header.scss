@@ -1,0 +1,23 @@
+.comp-header {
+  margin-bottom: ($b-space / 2);
+  & > div {
+    & > div {
+      @include pd-space--tb($b-space, $b-space);
+      background: rgba($white, 0.9);
+      }
+    }
+  .comp-details {
+    @include pd-space--tb($p-top: 6px);
+    p {
+      @include font-style(avenirMd, $b-fs, $c-comp-det);
+      & > a {
+        @include font-style($family: avenirMd, $size: inherit);
+        text-decoration: underline;
+        text-transform: uppercase;
+        &:hover {
+          @include link-hover-transition($c-text, white, 70%, color, 0.35s, linear);
+        }
+      }
+    }
+  }
+}

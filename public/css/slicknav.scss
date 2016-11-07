@@ -1,0 +1,177 @@
+@import 'base/helpers';
+@import 'base/config';
+
+/*************************
+*  Mobile Menu Core Style
+**************************/
+
+.slicknav_btn {
+  position: relative;
+  display: none;
+  vertical-align: middle;
+  line-height: 1.125em;
+  cursor: pointer;
+  .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.188em;
+  }
+}
+.slicknav_menu {
+  .slicknav_menutxt {
+    display: none;
+    line-height: 1.188em;
+    float: left;
+  }
+  .slicknav_icon {
+    float: left;
+    margin: 0.188em 0 0 0.438em;
+  }
+  .slicknav_no-text {
+    margin: 0;
+  }
+  .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: 0.1em;
+  }
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.slicknav_nav {
+  clear: both;
+  ul,
+  li {
+    display: block;
+  }
+  .slicknav_arrow {
+    font-size: 0.875rem;
+    margin: 0 0 0 5rem;
+    float: right;
+  }
+  .slicknav_item {
+    cursor: pointer;
+  }
+  .slicknav_row {
+    display: block;
+  }
+  a {
+    display: block;
+  }
+  .slicknav_item a,
+  .slicknav_parent-link a {
+    display: inline;
+  }
+}
+
+a{
+  text-decoration: none;
+  &:focus {
+    outline: none;
+    color: $white;
+  }
+}
+
+/*
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+/* Button */
+.slicknav_btn {
+  @include font-style($color: lighten($black, 7%)); /*#121212 - Jet Gray*/
+  letter-spacing: 0.6px;
+  margin: 10px 0 34px;
+  border-radius: 4px;
+}
+
+.slicknav_menu {
+  font-size: $b-fs-14;
+  .slicknav_menutxt { /* Button Text */
+    @include font-style($color: lighten($black, 7%)); /*#121212 - Jet Gray*/
+    letter-spacing: 0.6px;
+  }
+  .slicknav_icon-bar { /* Button Lines */
+    background: lighten($black, 7%); /*#121212 - Jet Gray*/
+  }
+}
+
+.slicknav_nav {
+  @include font-style();
+  letter-spacing: 0.6px;
+  max-height: 306px;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  background: lighten($black, 94%); /*f0f0f0 -  Very Light Gray*/
+  & > li {
+    border-bottom: 1px solid lighten($black, 60%); /*#999 - Light Gray*/
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  li li {
+    @include font-style($size: 0.75rem);
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid lighten($black, 60%); /*#999 - Light Gray*/
+    margin-left: 10px;
+    &:last-child {
+      border-bottom: none;
+    }
+    a {
+      padding-left: 0;
+    }
+  }
+  &, & ul {
+    list-style: none;
+    overflow: hidden;
+  }
+  & ul {
+    padding: 0;
+    margin: 0;
+    font-size: $b-fs-14;
+  }
+  .slicknav_row {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    &:hover {
+      @include link-hover-transition($brown, $white, 85%, color, 0.35s, linear);
+      border-radius: 4px;
+    }
+    &:focus {
+      outline: none;
+      color: lighten($black, 14%); /*#242424 - Very Dark Gray*/
+    }
+    span {
+      color: lighten($black, 7%); /*#121212 - Jet Gray*/
+    }
+  }
+  a{
+    padding: 5px 30px 5px 10px;
+    margin: 2px 5px;
+    color: lighten($black, 14%); /*#242424 - Very Dark Gray*/
+    &:hover {
+      @include link-hover-transition($brown, $white, 85%, color, 0.35s, linear);
+      border-radius: 4px;
+    }
+  }
+  .slicknav_item a,
+  .slicknav_parent-link a {
+    padding: 0;
+    margin: 0;
+  }
+  .slicknav_txtnode {
+    margin-left: 15px;
+  }
+}
+
+.slicknav_open > a {
+  @include font-style($family: avenirMd, $color: $brown !important);
+  letter-spacing: 0.6px;
+}

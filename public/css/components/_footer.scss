@@ -1,0 +1,16 @@
+.footer-container {
+  background: $c-background;
+}
+.footer {
+  @include pd-space--tb(($b-space / 2), ($b-space / 2));
+  p {
+    display: inline-block;
+    }
+  p:first-child {
+    @include font-style(avenirLt, $b-fs-14, $c-foot--p1);
+  }
+  p:last-child {
+    @include font-style(avenirHv, $b-fs-18, $c-foot--p2);
+    text-transform: uppercase;
+    }
+  }

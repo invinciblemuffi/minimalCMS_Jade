@@ -1,0 +1,27 @@
+.address {
+  padding-left: ($b-space / 2);
+  & > div {
+    padding: $b-space;
+    background: $c-background;
+    }
+  & > p {
+    @include font-style($family: avenirHv, $color: $white);
+    text-transform: uppercase;
+    background: $c-abt-cnt-header;
+    line-height: 2.5rem;
+    margin-bottom: ($b-space / 2);
+    }
+  div p {
+    @include font-style();
+    padding-bottom: ($b-space / 4); /*0.25rem*/
+    i {
+      padding-right: $b-space;
+      font-size: $b-fs;
+      }
+    span {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: ($b-space / 10); /*0.1rem*/
+    }
+  }
+}

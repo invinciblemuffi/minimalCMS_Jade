@@ -1,0 +1,16 @@
+.comp-info {
+  padding-right: ($b-space / 2);
+  margin-bottom: $b-space;
+  p:first-of-type {
+    @include font-style($family: avenirHv, $color: $white);
+    text-transform: uppercase;
+    background: $c-abt-cnt-header;
+    line-height: 2.5rem;
+    margin-bottom: ($b-space / 2);
+    }
+  p:nth-of-type(2) {
+    @include font-style();
+    background: $c-background;
+    padding: $b-space;
+    }
+  }

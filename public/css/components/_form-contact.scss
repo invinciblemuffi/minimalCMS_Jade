@@ -1,0 +1,29 @@
+form {
+  background: $c-background;
+  padding: $b-space;
+  margin-bottom: 0;
+  label, input[type="text"] {
+    @include font-style();
+    display: inline-block;
+  }
+  label {width: 40%;}
+  input[type="text"] {
+    height: 30px;
+    border: none;
+    background: $c-form-input;
+    box-shadow: none;
+    width: 60% 
+  }
+  input[type="submit"] {
+    border: 2px solid $c-prod-header;
+    border-radius: 4px;
+    background: none;
+    padding: ($b-space / 2) $b-space;
+    cursor: pointer;
+    &:focus {outline: $c-form-submit;}
+    &:hover {
+      background: $c-form-submit;
+      @include link-hover-transition($white, white, 100%, background, 0.4s, ease-in);
+    }
+  }
+}

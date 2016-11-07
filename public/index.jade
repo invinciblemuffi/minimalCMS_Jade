@@ -1,0 +1,38 @@
+//Brief About Company, Contact and Address Information.
+include _mixins/form-helpers
+div.row.abt-cnt-container
+  div.medium-12.columns.psz
+    div.medium-4.columns.comp-info
+      p.text-center Company Information
+      != partial("_md-snippets/_brief-aboutUs")
+    div#address.medium-4.columns.contact-info
+      p.text-center Contact Us
+      form.medium-12.columns(method="get" action="scripts/sendMail.php")
+        mixin field('text', 'name','Your name')
+        mixin field('text', 'company','Your company')
+        mixin field('text', 'ph','Your contact #')
+        mixin field('text', 'email','Your email')
+        input.right(type="submit" value="Send Info")
+    div.medium-4.columns.address#address
+      p.text-center Address
+      div
+        p
+          i.fi-address-book
+          <span>#{comp_title},
+          - for(i=0;i<address.length;i++)
+            - var addr=address[i]
+              br
+              | #{addr}
+          </span>
+        p
+          i.fi-mobile
+          | #{header_phone}  
+        p
+          i.fi-telephone
+          | #{phone_1}
+        p
+          i.fi-telephone-accessible
+          | #{fax}
+        p
+          i.fi-mail
+          | #{header_mail}

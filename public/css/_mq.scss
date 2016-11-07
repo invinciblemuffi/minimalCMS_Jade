@@ -1,0 +1,149 @@
+@media (max-width: 768px) {
+  .comp-header {
+    .comp-details {
+      p {font-size: $b-fs-12};
+    }
+  }
+  .accordion-container {
+    h5 a,
+    h3 {
+      font-size: $b-fs-12 !important;
+    }
+    h5,
+    h3 {
+      padding: 0.44rem 0.5rem;
+    }
+    h5 {
+      margin-bottom: 0 !important;
+      border-bottom: 1px solid $lightGray !important;
+      &:last-child {border-bottom: none !important;}
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      & + div {
+        margin-bottom: 0;
+        ul li {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  form {
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+
+  .abt-cnt-container {
+    .address div p {
+      span {width: 85%;}
+    }
+  }
+}
+
+/*
+*   Activate the query when browser width hits 640px.
+*/
+
+@media (max-width: 640px) {
+
+  /*---------- Slick Mobile Navigation -----------*/
+
+  .slicknav_btn,
+  .slicknav_menu  .slicknav_menutxt {
+    display: block;
+  }
+  .slicknav_menu {
+    width: 20%;
+    display: inline-block;
+  }
+
+  /*---------- Header Container - Header.scss -----------*/
+
+  .timings {
+    p {
+      width: 80%;
+      vertical-align: top;
+      display: inline-block;
+      padding-top: 5px;
+      text-align: right;
+    }
+  }
+  .contact {
+    margin-bottom: ($b-space / 2);
+    margin-top: -10px;
+  }
+
+  /*---------- Comp-Header.scss -----------*/
+
+  .comp-header {
+    .comp-name {
+      img {
+        display: block;
+        width: 50%;
+        margin: auto;
+      }
+    }
+    .comp-details p {
+      font-size: 0.875rem !important;
+      text-align: center;
+    }
+  }
+
+  /*---------- Home Page and Inside Page Navigation -----------*/
+
+  .main-nav,
+  .accordion-container {
+    display: none;
+  }
+
+  /*---------- Carousel Alignment -----------*/
+
+  .carousel {
+    padding-left: 0;
+  }
+
+  /*---------- About-Contact-Container -- Alignment -----------*/
+
+  .comp-info {
+    padding-right: ($b-space * 0.9375) !important;
+  }
+  .contact-info {
+    padding-left: ($b-space * 0.9375) !important;
+    padding-right: ($b-space * 0.9375) !important;
+  }
+  .address {
+    padding-left: ($b-space * 0.9375) !important;
+  }
+
+  /*---------- Form Input -- Width -----------*/
+
+  form {
+    input[type="text"] {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header .contact p {
+    margin-left: 0.5rem;
+  }
+
+  .comp-header {
+    .comp-name img { width: 60%; }
+    .comp-details p {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  .prods-container .prod-cat-container {
+    & > p:first-of-type {
+      @include font-style(avenirMd, $b-fs-15, $white);
+    }
+  }
+}

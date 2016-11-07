@@ -1,0 +1,32 @@
+block articles
+- var page_name= current.source
+- var page_name_match = page_name.concat(".html")
+- var links = public._data.links
+each value, key in links
+  - var main_cat= key
+  - var totSubCat = value.length
+  - for(i=0; i<totSubCat;i++)
+    - var link_url= value[i].url
+    if (link_url === page_name_match)
+      - var subCatPath= value[i].subCatPath
+      - var totArts= value[i].articles.length
+      - for(k=0;k<totArts;k++)
+        - var artPath= value[i].articles[k].art_path
+        - var img_dir_path= public.img[main_cat][subCatPath][artPath]
+        - var tot_img= img_dir_path._contents.length
+        - var img_loop_count= Math.ceil(tot_img/2)
+        - var imgs= img_dir_path._contents
+        - var article_name = value[i].articles[k].art_name
+        - var snippetName = value[i].articles[k].snippet_name
+        - var snippetDir = "_md-snippets"
+        - var snippetPath= snippetDir + "/" + main_cat + "/" + subCatPath + "/" + snippetName
+        - var j=0
+        .medium-9.columns.prod-cat-container
+          p #{ article_name }
+          != partial(snippetPath)
+          - for(z=0; z<img_loop_count; z++)
+            div.medium-12.columns.prods-list.psz
+              - for(counter=0; counter<3 && j<tot_img; counter++, j++)
+                - var img= imgs[j]
+                  .medium-4.small-4.columns.product
+                    img(src='img/#{ main_cat }/#{ subCatPath }/#{ artPath }/#{ img }')

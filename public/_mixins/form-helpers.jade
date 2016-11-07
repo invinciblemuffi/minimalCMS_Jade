@@ -1,0 +1,5 @@
+mixin field(type, field_name, item_name)
+  div
+    label(for="#{field_name}") #{item_name}
+    input(type="#{type}", name="#{field_name}", id="#{field_name}", class="radius")
+    br

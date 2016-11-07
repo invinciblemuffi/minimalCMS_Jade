@@ -1,0 +1,10 @@
+{
+  "globals": {
+    "comp_title": "Excellent Engineering Enterprises",
+    "header_phone"  : "+91-80-22242581",
+    "phone_1": "+91-80-41237373",
+    "fax": "+91-80-41149405",
+    "header_mail": "info@eeeblr.in",
+    "address": ["#73, N.R. Road,", "Bangalore - 560 002."]
+  }
+}
